@@ -86,10 +86,13 @@ header .social-icons a {
   font-size: 24px;
 }
 
-/* Activies */
+/* Activities */
 
 .loal-activities {
-  /*background-image: url("../../assets/img/img-bg-doodle.svg");*/
+  background-image: url("/img/img-bg-doodle.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat-x;
   height: 100vh;
 }
 
@@ -142,6 +145,10 @@ header .social-icons a {
 .activities-nav.owl-nav button {
   background: transparent;
   border: none;
+}
+
+.loal-activities .img-activities {
+  max-height: 120px;
 }
 
 .nav-mascot-head {
@@ -200,6 +207,10 @@ header .social-icons a {
 .newsletter-subscribe {
   height: 70vh;
   background-color: #0369a3;
+  background-position: top;
+  background-size: contain;
+  background-repeat: repeat-x;
+  background-image: url("/img/img-doodle.svg");
 }
 
 .newsletter-subscribe .form-control {

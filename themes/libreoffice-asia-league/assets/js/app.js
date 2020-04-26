@@ -6,7 +6,7 @@ $(document).ready(function(){
         stagePadding: 30,
         dots: false,
         nav: true,
-        navText: ["<img src='img-icon-left.svg' alt='prev-activity'/>","<img src='img-icon-right.svg' alt='next-activity'/>"],
+        navText: ["<img src='/img/img-icon-left.svg' alt='prev-activity'/>","<img src='/img/img-icon-right.svg' alt='next-activity'/>"],
         navContainer: ".activities-nav",
         responsiveClass: true,
         responsive: {
