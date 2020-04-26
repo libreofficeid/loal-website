@@ -5,4 +5,8 @@
 <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | absURL }}">
 <link rel="stylesheet" href="{{ "/css/owl.carousel.min.css" | absURL }}">
 <link rel="stylesheet" href="{{ "/css/owl.theme.default.min.css" | absURL }}">
-<link rel="stylesheet" href="{{ (resources.Get "css/styles.css").Permalink }}">
+{{ $css1 := resources.Get "css/Bold-BS4-Animated-Back-To-Top.css" }}
+{{ $css2 := resources.Get "css/smartnav.css" }}
+{{ $css3 := resources.Get "css/styles.css" }}
+{{ $bundled := slice $css1 $css2 $css3 | resources.Concat "css/app.css" | resources.ToCSS | resources.Minify }}
+<link rel="stylesheet" href="{{ $bundled.Permalink | absURL}}">

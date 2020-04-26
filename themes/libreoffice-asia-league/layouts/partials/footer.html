@@ -1,4 +1,4 @@
-<a class="cd-top js-cd-top cd-top--fade-out cd-top--show" style="background-image:url('/img/cd-top-arrow.svg');" href="#0">Top</a>
+<a class="cd-top js-cd-top cd-top--fade-out cd-top--show" href="#0">Top</a>
 <footer>
     <div class="container">
         <div class="row justify-content-center">
@@ -41,3 +41,9 @@
 </footer>
 <script src="{{ "/js/jquery.min.js" | absURL }}"></script>
 <script src="{{ "/js/bootstrap.min.js" | absURL }}"></script>
+<script src="{{ "/js/owl.carousel.min.js" | absURL }}"></script>
+{{ $js1 := resources.Get "js/Bold-BS4-Animated-Back-To-Top.js" }}
+{{ $js2 := resources.Get "js/app.js" }}
+{{ $js3 := resources.Get "js/smartnav.js" }}
+{{ $bundled := slice $js1 $js2 $js3 | resources.Concat "js/app.js" | resources.Minify }}
+<script src="{{ $bundled.Permalink | absURL}}"></script>

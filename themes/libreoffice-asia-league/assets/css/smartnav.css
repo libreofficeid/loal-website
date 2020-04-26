@@ -1,0 +1,19 @@
+.scrolled-down,
+.scrolled-up {
+    transition: all .3s ease-in-out
+}
+.smart-scroll {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030
+}
+
+.scrolled-down {
+    transform: translateY(-100%)
+}
+
+.scrolled-up {
+    transform: translateY(0)
+}

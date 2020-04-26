@@ -7,8 +7,3 @@
     {{ partial "newsletter.html" . }}
 
 {{ end }}
-{{ define "extra_js" }}
-<script src="{{ "/js/owl.carousel.min.js" | absURL }}"></script>
-<script src="{{ (resources.Get "js/app.js").Permalink }}"></script>
-
-{{ end }}
