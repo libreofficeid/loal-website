@@ -1,0 +1,26 @@
+{{ partial "nav.html" . }}
+<header class="loal-header">
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="col-lg-4 align-self-center d-none d-lg-block">
+                <h1>LibreOffice Asia League</h1>
+                <button class="btn btn-primary loal-button" type="button">Learn More</button>
+            </div>
+            <div class="col-lg-4">
+                <img class="img-fluid d-none d-lg-block" src="{{ "/img/img-main-mascot.svg" | absURL }}">
+                <img class="d-block d-lg-none mx-auto mb-3" src="{{ "/img/img-mascot-mobile.svg" | absURL }}" height="360">
+            </div>
+            <div class="col-lg-4 align-self-center text-center text-lg-left">
+                <h1 class="d-block d-lg-none">LibreOffice Asia League</h1>
+                <p>The spirit of collaboration from Asian Community. We meet, work, and do execelent contributions to grow up LibreOffice in Asia.</p>
+                <button class="btn btn-primary loal-button d-block d-lg-none mx-auto" type="button">Learn More</button>
+                <div class="social-icons mt-4 mt-lg-3">
+                    <a href="#"><img src="{{ "img/img-icon-slack.svg" | absURL }}"></a>
+                    <a href="#"><img src="{{ "img/img-icon-facebook.svg" | absURL }}"></a>
+                    <a href="#"><img src="{{ "img/img-icon-twitter.svg" | absURL }}"></a>
+                    <a href="#"><img src="{{ "img/img-icon-envelope.svg" | absURL }}"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
