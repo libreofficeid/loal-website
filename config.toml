@@ -1,0 +1,4 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "LibreOffice Asia League"
+theme = "libreoffice-asia-league"
