@@ -1,7 +1,71 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
+defaultContentLanguage = "en"
+enableGitInfo = true
 title = "LibreOffice Asia League"
 theme = "libreoffice-asia-league"
 
 [params]
     description = "The spirit of collaboration from Asian Community. We meet, work, and do execelent contributions to grow up LibreOffice in Asia."
+    
+    [params.socials]
+        email = "email@libreoffice.asia"
+        slack = "https://app.slack.com/LibreOfficeAsia"
+        facebook = "https://facebook.com/LibreOfficeAsia"
+        twitter = "https://twitter.com/LibreOfficeAsia"
+
+[menu]
+    [[menu.main]]
+        identifier = "home"
+        name = "This is the home section"
+        title = "Home"
+        url = "/"
+        weight = 1
+    [[menu.main]]
+        identifier = "members"
+        name = "This is the member section"
+        title = "Members"
+        url = "/members/"
+        weight = 2
+    [[menu.main]]
+        identifier = "news"
+        name = "This is the news section"
+        title = "News"
+        url = "/news/"
+        weight = 3
+    [[menu.main]]
+        identifier = "contact"
+        name = "This is the contact section"
+        title = "Contact"
+        url = "/contact/"
+        weight = 4
+    [[menu.main]]
+        identifier = "about"
+        name = "This is the about section"
+        title = "About"
+        url = "/about/"
+        weight = 5
+    
+    [[menu.external]]
+        identifier = "official"
+        title = "LibreOffice Official Page"
+        url = "https://libreoffice.org"
+        weight = 1
+
+    [[menu.external]]
+        identifier = "wiki"
+        title = "LibreOffice Wiki"
+        url = "https://wiki.documentfoundation.org"
+        weight = 2
+
+    [[menu.external]]
+        identifier = "bugzilla"
+        title = "LibreOffice Bugzilla"
+        url = "https://bugs.documentfoundation.org"
+        weight = 3
+
+    [[menu.external]]
+        identifier = "weblate"
+        title = "LibreOffice Weblate"
+        url = "https://weblate.documentfoundation.org"
+        weight = 4
