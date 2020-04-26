@@ -1,0 +1,254 @@
+html, body {
+  background-color: #023f62;
+  font-family: "Inter", sans-serif;
+  color: #fff;
+}
+
+h1 {
+  font-weight: 600;
+}
+
+.loal-navbar {
+  background-color: #023f62;
+}
+
+.loal-navbar .nav-link {
+  margin-right: 10px;
+}
+
+.loal-navbar .navbar-nav .nav-link.active {
+  font-weight: 600;
+}
+
+.loal-navbar .navbar-nav .active > .nav-link, .loal-navbar .navbar-nav .nav-link, .loal-navbar .navbar-nav .active > .nav-link, .loal-navbar .navbar-nav .nav-link.active {
+  color: white;
+}
+
+.loal-navbar .nav-link:hover {
+  color: #fc5c00;
+}
+
+.loal-navbar .nav-link.active::after {
+  content: "";
+  display: block;
+  width: 75%;
+  border: 2px solid #fc5c00;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 767px) {
+  .loal-navbar .nav-link.active::after {
+    content: "";
+    display: block;
+    width: 100px;
+    border: 1px solid #fc5c00;
+    margin-right: auto;
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+}
+
+.navbar-expand-md .navbar-nav .dropdown-menu {
+  right: 0;
+  left: unset;
+}
+
+/* Header */
+
+.loal-button {
+  border-radius: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #fc5c00;
+  border-color: #fc5c00;
+}
+
+.loal-button:hover, .loal-button:focus {
+  background-color: #e15403;
+  border-color: #e15403;
+}
+
+header.loal-header {
+  min-height: 100vh;
+}
+
+header .social-icons {
+  margin-top: 20px;
+}
+
+header .social-icons a {
+  width: 32px;
+  height: 32px;
+  padding: 10px 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+}
+
+/* Activies */
+
+.loal-activities {
+  /*background-image: url("../../assets/img/img-bg-doodle.svg");*/
+  height: 100vh;
+}
+
+.loal-subtitle {
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 2pt;
+}
+
+.loal-subtitle::after {
+  content: "";
+  display: block;
+  width: 60px;
+  border: 2px solid #fc5c00;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.loal-activities .activities-wrapper {
+  margin-top: 50px;
+}
+
+.card {
+  background-color: #023f62;
+  border-color: #fc5c00;
+}
+
+.card-link {
+  text-decoration: none;
+  color: #fc5c00;
+  font-weight: 600;
+  border-bottom: 1px solid #fc5c00;
+  position: absolute;
+  bottom: 1.25rem;
+  margin-bottom: 10px;
+  right: 20px;
+}
+
+.activities-nav.owl-nav {
+  text-align: right;
+  margin-top: 20px;
+  position: relative;
+}
+
+.activities-nav.owl-nav .owl-prev {
+  margin-right: 50px;
+}
+
+.activities-nav.owl-nav button {
+  background: transparent;
+  border: none;
+}
+
+.nav-mascot-head {
+  position: absolute;
+  left: -1rem;
+  top: -64px;
+  width: 120px;
+  z-index: 99;
+}
+
+/* Blog Section */
+
+.loal-blog {
+  min-height: 80vh;
+}
+
+.loal-blog .head-news {
+  margin: 50px 0px;
+}
+
+.loal-blog .head-news-description {
+  padding: 20px;
+}
+
+.loal-blog .head-news small {
+  font-size: 16px;
+}
+
+.head-news-title {
+  font-size: 2.0rem;
+}
+
+@media (max-width: 768px) {
+  .head-news-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .head-news-title {
+    font-size: 2.5rem;
+  }
+}
+
+.loal-blog .card {
+  border: none;
+}
+
+.loal-blog .card .card-header {
+  background: transparent;
+  border: none;
+}
+
+/* Newsletter */
+
+.newsletter-subscribe {
+  height: 70vh;
+  background-color: #0369a3;
+}
+
+.newsletter-subscribe .form-control {
+  min-width: 300px;
+  margin-right: 20px;
+  border-radius: 100px;
+}
+
+@media (min-width: 768px) {
+  .newsletter-subscribe .form-control {
+    min-width: 350px;
+    margin-right: 20px;
+    border-radius: 100px;
+  }
+}
+
+/* Footer */
+
+footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  font-size: smaller;
+}
+
+footer .loal-subsection::after {
+  content: "";
+  display: block;
+  border: 1px solid #fc5c00;
+  width: 50px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+  footer .loal-subsection::after {
+    content: "";
+    display: block;
+    border: 1px solid #fc5c00;
+    width: 50px;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+footer .item a {
+  color: white;
+}
+
+footer .item a:hover {
+  color: #fc5c00;
+}
+
