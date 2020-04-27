@@ -1,9 +1,10 @@
 {{ partial "nav.html" . }}
+{{ if .IsHome }}
 <header class="loal-header">
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-lg-4 align-self-center d-none d-lg-block">
-                <h1>LibreOffice Asia League</h1>
+                <h1>{{ .Site.Title }}</h1>
                 <button class="btn btn-primary loal-button" type="button">Learn More</button>
             </div>
             <div class="col-lg-4">
@@ -11,16 +12,43 @@
                 <img class="d-block d-lg-none mx-auto mb-3" src="{{ "/img/img-mascot-mobile.svg" | absURL }}" height="360">
             </div>
             <div class="col-lg-4 align-self-center text-center text-lg-left">
-                <h1 class="d-block d-lg-none">LibreOffice Asia League</h1>
-                <p>The spirit of collaboration from Asian Community. We meet, work, and do execelent contributions to grow up LibreOffice in Asia.</p>
+                <h1 class="d-block d-lg-none">{{ .Site.Title }}</h1>
+                <p>{{.Site.Params.description}}</p>
                 <button class="btn btn-primary loal-button d-block d-lg-none mx-auto" type="button">Learn More</button>
+                {{ with .Site.Params.socials }}
                 <div class="social-icons mt-4 mt-lg-3">
-                    <a href="#"><img src="{{ "img/img-icon-slack.svg" | absURL }}"></a>
-                    <a href="#"><img src="{{ "img/img-icon-facebook.svg" | absURL }}"></a>
-                    <a href="#"><img src="{{ "img/img-icon-twitter.svg" | absURL }}"></a>
-                    <a href="#"><img src="{{ "img/img-icon-envelope.svg" | absURL }}"></a>
+                    {{ with .slack }}<a href="{{ . }}"><img src="{{ "img/img-icon-slack.svg" | absURL }}"></a>{{ end }}
+                    {{ with .facebook }}<a href="{{ . }}"><img src="{{ "img/img-icon-facebook.svg" | absURL }}"></a>{{ end }}
+                    {{ with .twitter }}<a href="{{ . }}"><img src="{{ "img/img-icon-twitter.svg" | absURL }}"></a>{{ end }}
+                    {{ with .email }}<a href="mailto:{{.}}"><img src="{{ "img/img-icon-envelope.svg" | absURL }}"></a>{{ end }}
                 </div>
+                {{ end }}
             </div>
         </div>
     </div>
 </header>
+{{ else }}
+<header class="loal-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center pb-5">
+                {{ if .IsPage }}
+                    <h1 class="mt-5">{{ .Title }}</h1>
+                    {{ $author := .Author }}
+                    {{ if .GitInfo }}
+                        {{ $author = .GitInfo.AuthorName }}
+                    {{ end }}
+                    <p>By: {{ $author }} <br> at {{ dateFormat "2 January 2006 15:04 MST" .Date.UTC }}</p>
+                    {{ if .Lastmod }}<small class="text-center">Updated on: {{ dateFormat "2 January 2006 15:04 MST" .Lastmod.UTC }}</small>{{ end }}
+                {{ else }}
+                    <h1 class="mt-5">{{ .Section | humanize }}</h1>
+                    {{ if not (or (eq .Section "contact") (eq .Section "about")) }}
+                    {{ $numpages := len .RegularPages }}
+                    <small>{{ $numpages }} contents</small>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</header>
+{{end}}
