@@ -6,11 +6,11 @@
                 <div class="col-12 col-md-4 mb-3">
                     {{ $contentPermalink := .Permalink}}
                     <a class="post-item d-flex flex-column" href="{{ $contentPermalink }}" title="{{.Title}}">
-                        <div class="post-thumb">
-                            <img class="shadow rounded" src="{{ with .Params.image }}{{ print $contentPermalink . }}{{else}}/img/img-post-template.svg{{end}}" alt="" height="200px">
+                        <div class="post-thumb shadow rounded" 
+                            style="background-image: url('{{ with .Params.image }}{{ print $contentPermalink . }}{{else}}/img/img-post-template.svg{{end}}')">
                         </div>
                         <div class="post-meta">
-                            <h3 class="post-title">{{.Title}}</h3>
+                            <h3 class="post-title">{{ .Title }}</h3>
                             {{ $author := .Author }}
                             {{ if .GitInfo }}
                                 {{ $author = .GitInfo.AuthorName }}
