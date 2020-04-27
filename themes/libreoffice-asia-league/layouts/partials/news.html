@@ -1,62 +1,51 @@
+{{ $news := where site.RegularPages "Section" "news" }}
 <div class="loal-blog py-5">
     <div class="container">
         <h2 class="loal-subtitle">Blog News</h2>
-        <div class="row head-news">
-            <div class="col-lg-6 head-news-image my-auto text-center"><img class="img-fluid" src="/img/img-blog-post-big.svg"></div>
-            <div class="col-lg-6 head-news-description"><small>May, 13 2020</small>
-                <h1 class="head-news-title"><strong>Newest Blog Post Title Here ...</strong></h1>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi a mauris. Quisque aliquam, nulla ac scelerisque convallis, nisi ligula sagittis risus, at nonummy arcu urna pulvinar nibh. Mauris et pede. Integer accumsan. Aenean justo
-                    ipsum, luctus ut, volutpat ...</p><a class="btn btn-primary btn-lg loal-button" role="button">Read More</a></div>
-        </div>
+        {{ if lt (len $news) 1 }}
+            <div class="row my-auto alert alert-info">
+                <div class="col-12 text-center my-auto">
+                    <div class="border border-info mx-auto" style="width: 64px; height:64px; border-radius: 64px;font-size: 40px;">!</div>
+                </div>
+                <div class="col-12 text-center">
+                    <h4>Uh Ooh!</h4>
+                    <p>There is nothing to show. Please add a "News" post to display it in these section.</p>
+                </div>
+            </div>
+        {{ end }}
+        {{ with $news }}
+        {{ $seven_latest := first 7 $news }}
+        {{ range first 1 $seven_latest }}
+            {{ $contentPermalink := .Permalink}}
+            <div class="row head-news">
+                <div class="col-lg-6 head-news-image my-auto text-center">
+                    <div class="post-thumb shadow rounded mb-3" style="background-image: url('{{ with .Params.image }}{{ print $contentPermalink . }}{{else}}/img/img-post-template.svg{{end}}')"></div>
+                </div>
+                <div class="col-lg-6 head-news-description">
+                    <small>{{ dateFormat "2 January 2006 15:04 MST" .Date.UTC }}</small>
+                    <h3 class="head-news-title"><strong>{{ .Title }}</strong></h3>
+                    <div class="head-summary">
+                        {{ .Summary }}...
+                    </div>
+                    <a class="btn btn-primary mt-3 loal-button" href="{{ .Permalink }}">Read More</a>
+                </div>
+            </div>
+        {{ end }}
         <div class="row loal-news-content">
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
-                    <div class="card-header"><img class="img-fluid" src="/img/img-blog-post.svg"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary loal-button" type="button">Read More</button></div>
-                </div>
+            {{ range last 6 $seven_latest }}
+            <div class="col-12 col-md-4 mb-3 post-wrapper">
+                {{ $contentPermalink := .Permalink}}
+                <a class="post-item d-flex flex-column" href="{{ $contentPermalink }}" title="{{.Title}}">
+                    <div class="post-thumb shadow rounded mb-3" style="background-image: url('{{ with .Params.image }}{{ print $contentPermalink . }}{{else}}/img/img-post-template.svg{{end}}')"></div>
+                    <div class="post-meta">
+                        <h4 class="post-title">{{ .Title }}</h4>
+                        <p class="post-summary">{{ .Summary }}</p>
+                        <a href="{{ .Permalink }}" class="btn loal-button mt-3">Read More</a>
+                    </div>
+                </a>
             </div>
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
-                    <div class="card-header"><img class="img-fluid" src="/img/img-blog-post.svg"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary loal-button" type="button">Read More</button></div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
-                    <div class="card-header"><img class="img-fluid" src="/img/img-blog-post.svg"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary loal-button" type="button">Read More</button></div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
-                    <div class="card-header"><img class="img-fluid" src="/img/img-blog-post.svg"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary loal-button" type="button">Read More</button></div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
-                    <div class="card-header"><img class="img-fluid" src="/img/img-blog-post.svg"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary loal-button" type="button">Read More</button></div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
-                    <div class="card-header"><img class="img-fluid" src="/img/img-blog-post.svg"></div>
-                    <div class="card-body">
-                        <h4 class="card-title">Title</h4>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p><button class="btn btn-primary loal-button" type="button">Read More</button></div>
-                </div>
-            </div>
+            {{ end }}
         </div>
+        {{ end }}
     </div>
 </div>
