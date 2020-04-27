@@ -1,12 +1,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-<title>{{ .Site.Title }}</title>
+<title>{{ with .Params.Title }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ .Params.description }}">
+{{ template "_internal/opengraph.html" . }}
+{{ template "_internal/twitter_cards.html" . }}
 <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | absURL }}">
 <link rel="stylesheet" href="{{ "/css/owl.carousel.min.css" | absURL }}">
 <link rel="stylesheet" href="{{ "/css/owl.theme.default.min.css" | absURL }}">
 {{ $css1 := resources.Get "css/Bold-BS4-Animated-Back-To-Top.css" }}
 {{ $css2 := resources.Get "css/smartnav.css" }}
 {{ $css3 := resources.Get "css/styles.css" }}
-{{ $bundled := slice $css1 $css2 $css3 | resources.Concat "css/app.css" | resources.ToCSS | resources.Minify }}
+{{ $css4 := resources.Get "css/content.css" }}
+{{ $bundled := slice $css1 $css2 $css3 $css4 | resources.Concat "css/app.css" | resources.ToCSS | resources.Minify }}
 <link rel="stylesheet" href="{{ $bundled.Permalink | absURL}}">
