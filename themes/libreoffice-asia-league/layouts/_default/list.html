@@ -5,7 +5,7 @@
                 {{ range (where .Pages "Section" .Section )}}
                 <div class="col-12 col-md-4 mb-3">
                     {{ $contentPermalink := .Permalink}}
-                    <a class="post-item d-flex flex-column" href="{{ $contentPermalink }}" title="{{.Title}}">
+                    <a class="post-item" href="{{ $contentPermalink }}" title="{{.Title}}">
                         <div class="post-thumb shadow rounded" 
                             style="background-image: url('{{ with .Params.image }}{{ print $contentPermalink . }}{{else}}/img/img-post-template.svg{{end}}')">
                         </div>
@@ -15,7 +15,7 @@
                             {{ if .GitInfo }}
                                 {{ $author = .GitInfo.AuthorName }}
                             {{ end }}
-                            <small>By: {{$author}} on: {{ .Date.Format "2 January 2006" }}</small><br>
+                            <small>by {{$author}} on {{ dateFormat "2 January 2006 15:04 MST" .Date.UTC }}</small><br>
                             <button class="btn loal-button mt-3">Read More</button>
                         </div>
                     </a>
