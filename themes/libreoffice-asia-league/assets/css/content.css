@@ -1,0 +1,46 @@
+.list-contact, .list-activities, 
+.list-members, .list-news,
+.main-contact, .main-activities, 
+.main-members, .main-news{
+    background: white;
+    min-height: 100vh;
+    color: #023f62;
+}
+
+h3.post-title{
+    font-size: 23px;
+    font-weight: 600;
+    display: block;
+    display: -webkit-box !important;
+    line-clamp: 2;
+    -moz-line-clamp: 2;
+    -webkit-line-clamp: 2;
+    box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 60px;
+}
+
+.list-contact .post-item, .list-activities .post-item, 
+.list-members .post-item, .list-news .post-item{
+    margin-bottom: 20px;
+    color: #023f62;
+    text-decoration: none;
+}
+
+.list-contact .post-item:hover, .list-activities .post-item:hover, 
+.list-members .post-item:hover, .list-news .post-item:hover{
+    color: #fc5c00;
+}
+
+.list-contact .post-meta, .list-activities .post-meta, 
+.list-members .post-meta, .list-news .post-meta{
+    margin-top: 20px;
+}
+
+.main-content img{
+    width: 100%;
+    height: auto;
+}

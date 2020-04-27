@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html class="no-js">
     <head>
         {{- partial "head.html" . -}}
         {{- block "extra_css" . }}{{- end }}
     </head>
-    <body>
+    <body class="{{ if .IsHome }}homepage{{ else }}content-page{{ end }}">
         {{- partial "header.html" . -}}
         {{- block "main" . }}{{- end }}
         {{- partial "footer.html" . -}}
