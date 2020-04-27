@@ -1,17 +1,16 @@
 <nav class="navbar navbar-dark navbar-expand-md loal-navbar smart-scroll" id="navbar">
-    <div class="container-fluid"><a class="navbar-brand" href="#">
+    <div class="container-fluid"><a class="navbar-brand" href="{{ .Site.BaseURL }}">
         <img class="w-75" src="/img/img-nav-logo.svg"></a>
         <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navcol-1">
+            {{ $currentPage := . }}
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Home</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#">Members</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#">News</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#">Contact</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="#">About</a></li>
+                {{ range .Site.Menus.main }}
+                    <li class="nav-item" role="presentation"><a class="nav-link {{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }}active{{ end }}" href="{{ .URL }}">{{.Title}}</a></li>
+                {{ end }}
                 <li class="nav-item dropdown">
                     <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">EN</a>
                     <div class="dropdown-menu" role="menu">
