@@ -5,6 +5,12 @@ enableGitInfo = true
 title = "LibreOffice Asia League"
 theme = "libreoffice-asia-league"
 
+disqusShortname = "yourdiscussshortname"
+googleAnalytics = "UA-123-45"
+
+[permalinks]
+  news = "/:year/:month/:title/"
+
 [params]
     description = "The spirit of collaboration from Asian Community. We meet, work, and do execelent contributions to grow up LibreOffice in Asia."
     
