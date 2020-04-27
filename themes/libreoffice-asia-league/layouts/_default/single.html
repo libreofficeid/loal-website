@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{ $contentURL := .Permalink }}
+<section class="main-{{.Section}} py-5">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-md-8 main-content">
+                {{ with .Params.image }}
+                <img class="shadow rounded mb-3" src="{{ $contentURL }}{{ . }}" alt="post-thumbnail">
+                {{ end }}
+                {{.Content}}
+            </div>
+            <div class="col-md-4 sidebar">
+                <p>kosong nih</p>
+            </div>
+        </div>
+        {{ if eq .Section "news" }}
+        <div class="row">
+            <div class="col-12">
+                {{ partial "disqus.html" . }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
