@@ -1,4 +1,4 @@
-	// add padding top to show content behind navbar
+// add padding top to show content behind navbar
 $('body').css('padding-top', $('.navbar').outerHeight() + 'px')
 
 // detect scroll top or down
