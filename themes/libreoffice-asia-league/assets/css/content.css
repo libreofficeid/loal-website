@@ -7,7 +7,7 @@
     color: #023f62;
 }
 
-h3.post-title{
+.post-title{
     font-size: 23px;
     font-weight: 600;
     display: block;
@@ -45,10 +45,39 @@ h3.post-title{
     height: auto;
 }
 
-.post-thumb {
+.post-thumb, .section-sidebar .post-thumb {
     width: 100%;
     height: 300px;
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+/* sidebar single content */
+
+.section-sidebar .post-related-single::after {
+    content: "";
+    display: block;
+    width: 95%;
+    height: 1px;
+    background-color: #023f62;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.section-sidebar .post-thumb{
+    width: 100px;
+    height: 90px;
+}
+
+.section-sidebar .post-title{
+    font-size: initial;
+    line-clamp: 3;
+    -moz-line-clamp: 3;
+    -webkit-line-clamp: 3;
+}
+
+.section-sidebar .post-categories, .section-sidebar .post-tags,
+.section-sidebar .post-related {
+    padding: 20px 0px;
 }

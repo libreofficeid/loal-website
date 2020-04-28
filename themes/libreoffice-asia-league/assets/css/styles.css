@@ -4,6 +4,10 @@ html, body {
   color: #fff;
 }
 
+.text-primary, a.text-primary {
+  color: #023f62;
+}
+
 h1 {
   font-weight: 600;
 }
@@ -252,7 +256,7 @@ footer {
   font-size: smaller;
 }
 
-footer .loal-subsection::after {
+.loal-subsection::after {
   content: "";
   display: block;
   border: 1px solid #fc5c00;
@@ -261,7 +265,7 @@ footer .loal-subsection::after {
 }
 
 @media (max-width: 768px) {
-  footer .loal-subsection::after {
+  .loal-subsection::after {
     content: "";
     display: block;
     border: 1px solid #fc5c00;
