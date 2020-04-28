@@ -7,6 +7,23 @@ theme = "libreoffice-asia-league"
 
 disqusShortname = "yourdiscussshortname"
 googleAnalytics = "UA-123-45"
+paginate = 6
+
+[related]
+    includeNewer = true
+    toLower = true
+    [[related.indices]]
+        name = "categories"
+        weight = 80
+    [[related.indices]]
+        name = "date"
+        weight = 60
+    [[related.indices]]
+        name = "keywords"
+        weight = 50
+    [[related.indices]]
+        name = "tags"
+        weight = 50
 
 [permalinks]
   news = "/:year/:month/:title/"
