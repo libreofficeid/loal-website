@@ -34,11 +34,11 @@
             <div class="col-12 text-center pb-5">
                 {{ if .IsPage }}
                     <h1 class="mt-5">{{ .Title }}</h1>
-                    {{ $author := .Author }}
+                    {{ $author := .Params.Author }}
                     {{ if .GitInfo }}
                         {{ $author = .GitInfo.AuthorName }}
                     {{ end }}
-                    <p>By: {{ $author }} <br> at {{ dateFormat "2 January 2006 15:04 MST" .Date.UTC }}</p>
+                    <p>By: {{ with $author | default "Admin" }}{{ . }}{{ end }} <br> at {{ dateFormat "2 January 2006 15:04 MST" .Date.UTC }}</p>
                     {{ if .Lastmod }}<small class="text-center">Updated on: {{ dateFormat "2 January 2006 15:04 MST" .Lastmod.UTC }}</small>{{ end }}
                 {{ else }}
                     <h1 class="mt-5">{{ .Section | humanize }}</h1>
