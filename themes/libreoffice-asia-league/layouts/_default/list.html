@@ -2,7 +2,7 @@
     <section class="list-{{.Section}} py-5">
         <div class="container">
             <div class="row">
-                {{ range (where .Pages "Section" .Section )}}
+                {{ range (.Paginate (where .Pages "Section" .Section )).Pages }}
                 <div class="col-12 col-md-4 mb-3">
                     {{ $contentPermalink := .Permalink}}
                     <a class="post-item" href="{{ $contentPermalink }}" title="{{.Title}}">
@@ -11,16 +11,19 @@
                         </div>
                         <div class="post-meta">
                             <h3 class="post-title">{{ .Title }}</h3>
-                            {{ $author := .Author }}
+                            {{ $author := .Params.Author }}
                             {{ if .GitInfo }}
                                 {{ $author = .GitInfo.AuthorName }}
                             {{ end }}
-                            <small>by {{$author}} on {{ dateFormat "2 January 2006 15:04 MST" .Date.UTC }}</small><br>
+                            <small>by {{ with $author | default "Admin" }}{{.}}{{ end }} on {{ dateFormat "2 January 2006 15:04 MST" .Date.UTC }}</small><br>
                             <button class="btn loal-button mt-3">Read More</button>
                         </div>
                     </a>
                 </div>
                 {{ end }}
+            </div>
+            <div class="row justify-content-center align-items-center mt-5 py-5">
+                {{ template "_internal/pagination.html" . }}
             </div>
         </div>
     </section>
