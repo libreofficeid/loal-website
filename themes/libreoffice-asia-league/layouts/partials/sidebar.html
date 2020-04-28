@@ -1,0 +1,48 @@
+<div class="section-sidebar">
+    <h4 class="loal-subsection">Categories</h4>
+    <div class="post-categories">
+        {{ $contentCategories := .Params.categories }}
+        {{ with $contentCategories }}
+            {{ range . }}
+                <a href="#" class="btn btn-info">{{ . }}</a>
+            {{ end }}
+        {{ else }}
+            -
+        {{ end }}
+    </div>
+    <h4 class="loal-subsection">Tags</h4>
+    <div class="post-tags">
+        {{ $contentTags := .Params.tags }}
+        {{ with $contentTags }}
+            {{ range . }}
+                <a href="#" class="btn btn-secondary">{{ . }}</a>
+            {{ end }}
+        {{ else }}
+            -
+        {{ end }}
+    </div>
+    <h4 class="loal-subsection">Related Posts</h4>
+    <div class="post-related">
+        {{ $relatedPosts := where (.Site.RegularPages.RelatedIndices . "categories" "date" ) "Section" .Section | first 5 }}
+        {{ $thisSection := .Section }}
+        {{ with $relatedPosts }}
+            {{ range . }}
+                {{ $contentPermalink := .Permalink }}
+                <a class="post-related-single text-primary" title="{{ .Title }}" href="{{ $contentPermalink }}">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="post-thumb" style="background-image: url('{{ with .Params.image }}{{ print $contentPermalink . }}{{else}}/img/img-post-template.svg{{end}}')"></div>
+                        </div>
+                        <div class="col-md-8">
+                            <small>{{ dateFormat "2 January 2006 15:04 MST" .Date.UTC }}</small>
+                            <h5 class="post-title">{{ .Title }}</h5>
+                        </div>
+                    </div>
+                </a>
+            {{ end }}
+        {{ else }}
+                -
+        {{ end }}
+
+    </div>
+</div>
