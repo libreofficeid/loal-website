@@ -1,0 +1,55 @@
+{{ define "extra_css" }}
+<link rel="stylesheet" type="text/css" href="/vendor/datatables.min.css"/>
+{{ end }}
+{{ define "header" }}
+    {{ partial "nav.html" . }}
+    <header class="loal-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center pb-5">
+                    <h1>{{ .Title }}</h1>
+                    <small>Last Modified: {{ dateFormat "2 January 2006 15:04 MST" .Lastmod.UTC }}</small>
+                </div>
+            </div>
+        </div>
+    </header>
+{{ end }}
+{{ define "main" }}
+    <section class="list-members py-5">
+        <div class="container">
+            <div class="row mt-3">
+                <div class="col-12">
+                    {{ .Content }}
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12">
+                    <table class="table table-striped" id="member-table">
+                        <thead>
+                            <tr>
+                                <th>Country</th>
+                                <th>Name</th>
+                                <th>Info</th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+{{ end }}
+{{ define "extra_js" }}
+<script type="text/javascript" src="/vendor/datatables.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#member-table").DataTable({
+        ajax: "{{ print .Permalink .Params.memberList }}",
+        columns: [
+            {"data": "country"},
+            {"data": "name"},
+            {"data": "info"},
+        ]
+    })
+});
+</script>
+{{ end }}

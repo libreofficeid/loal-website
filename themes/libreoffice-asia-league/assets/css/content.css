@@ -2,7 +2,7 @@
 .list-members, .list-news,
 .main-contact, .main-activities, 
 .main-members, .main-news, 
-.loal-taxonomies{
+.loal-taxonomies, .list-members{
     background: white;
     min-height: 100vh;
     color: #023f62;
