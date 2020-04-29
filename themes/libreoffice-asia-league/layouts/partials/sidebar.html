@@ -1,10 +1,11 @@
+{{ $thisPage := . }}
 <div class="section-sidebar">
     <h4 class="loal-subsection">Categories</h4>
     <div class="post-categories">
         {{ $contentCategories := .Params.categories }}
         {{ with $contentCategories }}
             {{ range . }}
-                <a href="#" class="btn btn-info">{{ . }}</a>
+                <a href="/categories/{{.}}" class="btn btn-info">{{ . }}</a>
             {{ end }}
         {{ else }}
             -
@@ -15,7 +16,7 @@
         {{ $contentTags := .Params.tags }}
         {{ with $contentTags }}
             {{ range . }}
-                <a href="#" class="btn btn-secondary">{{ . }}</a>
+                <a href="/tags/{{.}}" class="btn btn-secondary">{{ . }}</a>
             {{ end }}
         {{ else }}
             -
@@ -24,7 +25,6 @@
     <h4 class="loal-subsection">Related Posts</h4>
     <div class="post-related">
         {{ $relatedPosts := where (.Site.RegularPages.RelatedIndices . "categories" "date" ) "Section" .Section | first 5 }}
-        {{ $thisSection := .Section }}
         {{ with $relatedPosts }}
             {{ range . }}
                 {{ $contentPermalink := .Permalink }}
@@ -40,9 +40,9 @@
                     </div>
                 </a>
             {{ end }}
+            <a href="/categories/" class="btn loal-button">Show More</a>
         {{ else }}
                 -
         {{ end }}
-
     </div>
 </div>

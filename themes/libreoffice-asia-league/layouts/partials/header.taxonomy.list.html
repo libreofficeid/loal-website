@@ -1,0 +1,18 @@
+{{ partial "nav.html" . }}
+<header class="loal-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center pb-5">
+                <h1>All posts with <span class="text-success">"{{ .Title }}"</span> {{ .Section }}</h1>
+                <div class="row justify-content-center">
+                    <a href="{{ .Section | absURL }}" class="btn btn-outline-success">Back to see all {{ .Section }}</a>
+                </div>
+                {{ range .Data.Terms.ByCount }}
+                    <a class="btn btn-outline-success" href="#{{ .Name | urlize }}-list" data-tag="{{ .Name | lower }}">
+                    {{ .Name }} <span class="badge badge-danger">{{ .Pages | len }}</span>
+                    </a>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</header>

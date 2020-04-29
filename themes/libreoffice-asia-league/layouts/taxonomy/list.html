@@ -1,0 +1,36 @@
+{{ define "header" }}
+    {{ partial "header.taxonomy.list.html" . }}
+{{ end }}
+
+{{/* Show all posts containing specified category or tag */}}
+{{ define "main" }}
+<section class="list-news py-5">
+    <div class="container">
+        <div class="row mt-3">
+            {{ $paginator := .Paginate .Pages }}
+            {{ range $paginator.Pages }}
+            <div class="col-12 col-md-4 mb-3">
+                {{ $contentPermalink := .Permalink}}
+                <a class="post-item" href="{{ $contentPermalink }}" title="{{.Title}}">
+                    <div class="post-thumb shadow rounded" 
+                        style="background-image: url('{{ with .Params.image }}{{ print $contentPermalink . }}{{else}}/img/img-post-template.svg{{end}}')">
+                    </div>
+                    <div class="post-meta">
+                        <h3 class="post-title">{{ .Title }}</h3>
+                        {{ $author := .Params.Author }}
+                        {{ if .GitInfo }}
+                            {{ $author = .GitInfo.AuthorName }}
+                        {{ end }}
+                        <small>by {{ with $author | default "Admin" }}{{.}}{{ end }} on {{ dateFormat "2 January 2006 15:04 MST" .Date.UTC }}</small><br>
+                        <button class="btn loal-button mt-3">Read More</button>
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+        <div class="row justify-content-center">
+            {{ template "_internal/pagination.html" . }}
+        </div>
+    </div>
+</section>
+{{ end }}

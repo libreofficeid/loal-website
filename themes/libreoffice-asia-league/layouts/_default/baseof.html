@@ -5,7 +5,7 @@
         {{- block "extra_css" . }}{{- end }}
     </head>
     <body class="{{ if .IsHome }}homepage{{ else }}content-page{{ end }}">
-        {{- partial "header.html" . -}}
+        {{- block "header" . }}{{- partial "header.html" . -}}{{- end }}
         {{- block "main" . }}{{- end }}
         {{- partial "footer.html" . -}}
         {{- block "extra_js" . }}{{- end }}
