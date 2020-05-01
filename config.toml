@@ -6,7 +6,7 @@ title = "LibreOffice Asia League"
 theme = "libreoffice-asia-league"
 
 disqusShortname = "yourdiscussshortname"
-googleAnalytics = "UA-123-45"
+#googleAnalytics = "UA-123-45"
 paginate = 6
 
 [related]

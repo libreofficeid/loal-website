@@ -50,4 +50,6 @@
 {{ $js3 := resources.Get "js/smartnav.js" }}
 {{ $bundled := slice $js1 $js2 $js3 | resources.Concat "js/app.js" | resources.Minify }}
 <script src="{{ $bundled.Permalink | absURL}}"></script>
-{{ template "_internal/google_analytics_async.html" . }}
+{{ if .Site.GoogleAnalytics }}
+    {{ template "_internal/google_analytics_async.html" . }}
+{{ end }}
