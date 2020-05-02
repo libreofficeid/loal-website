@@ -9,7 +9,18 @@
             {{ $currentPage := . }}
             <ul class="nav navbar-nav ml-auto">
                 {{ range .Site.Menus.main }}
+                    {{ if .HasChildren }}
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">{{.Title}}</a>
+                        <div class="dropdown-menu" role="menu">
+                            {{ range .Children }}
+                            <a class="dropdown-item" role="presentation" href="{{.URL}}">{{ .Title }}</a>
+                            {{ end }}
+                        </div>
+                    </li>
+                    {{ else }}
                     <li class="nav-item" role="presentation"><a class="nav-link {{ if or ($currentPage.IsMenuCurrent "main" .) (eq $currentPage.Section .Identifier) }}active{{ end }}" href="{{ .URL }}">{{.Title}}</a></li>
+                    {{ end }}
                 {{ end }}
                 <li class="nav-item dropdown">
                     <a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#">EN</a>
