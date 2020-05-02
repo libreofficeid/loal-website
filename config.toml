@@ -40,34 +40,51 @@ paginate = 6
 [menu]
     [[menu.main]]
         identifier = "home"
-        name = "This is the home section"
         title = "Home"
         url = "/"
         weight = 1
+
     [[menu.main]]
-        identifier = "members"
-        name = "This is the member section"
-        title = "Members"
-        url = "/members/"
+        identifier = "activities"
+        title = "Activities"
+        url = "#"
         weight = 2
     [[menu.main]]
+        parent = "activities"
+        identifier = "promoting"
+        title = "Promoting LibreOffice in Asia"
+        url = "/activities/promoting-libreoffice-in-asia"
+        weight = 1
+    [[menu.main]]
+        parent = "activities"
+        identifier = "loal"
+        title = "LibreOffice Conference Asia"
+        url = "/activities/libreoffice-conference-asia"
+        weight = 2
+
+    [[menu.main]]
+        identifier = "members"
+        title = "Members"
+        url = "/members/"
+        weight = 3
+
+    [[menu.main]]
         identifier = "news"
-        name = "This is the news section"
         title = "News"
         url = "/news/"
-        weight = 3
+        weight = 4
+
     [[menu.main]]
         identifier = "contact"
-        name = "This is the contact section"
         title = "Contact"
         url = "/contact/"
-        weight = 4
+        weight = 5
+
     [[menu.main]]
         identifier = "about"
-        name = "This is the about section"
         title = "About"
         url = "/about/"
-        weight = 5
+        weight = 6
     
     [[menu.external]]
         identifier = "official"
