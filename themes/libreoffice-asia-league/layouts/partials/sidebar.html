@@ -22,7 +22,7 @@
             -
         {{ end }}
     </div>
-    <h4 class="loal-subsection">Related Posts</h4>
+    <h4 class="loal-subsection">Related {{ .Section | humanize }}</h4>
     <div class="post-related">
         {{ $relatedPosts := where (.Site.RegularPages.RelatedIndices . "categories" "date" ) "Section" .Section | first 5 }}
         {{ with $relatedPosts }}
