@@ -5,7 +5,7 @@
         <div class="row h-100">
             <div class="col-lg-4 align-self-center d-none d-lg-block">
                 <h1 class="mb-4">{{ .Site.Title }}</h1>
-                <button class="btn btn-primary loal-button" type="button">Learn More</button>
+                <button class="btn btn-primary loal-button" type="button">Get More Info</button>
             </div>
             <div class="col-lg-4">
                 <img alt="mascot-desktop" class="img-fluid d-none d-lg-block" src="{{ "/img/img-main-mascot.svg" | absURL }}">
@@ -14,7 +14,7 @@
             <div class="col-lg-4 align-self-center text-center text-lg-left">
                 <h1 class="d-block d-lg-none">{{ .Site.Title }}</h1>
                 <p>{{.Site.Params.description}}</p>
-                <button class="btn btn-primary loal-button d-block d-lg-none mx-auto" type="button">Learn More</button>
+                <button class="btn btn-primary loal-button d-block d-lg-none mx-auto" type="button">Get More Info</button>
                 {{ with .Site.Params.socials }}
                 <div class="social-icons mt-4">
                     {{ with .slack }}<a href="{{ . }}"><img alt="ic-slack" src="{{ "img/img-icon-slack.svg" | absURL }}"></a>{{ end }}

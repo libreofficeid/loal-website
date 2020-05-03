@@ -64,8 +64,8 @@ h1 {
   border-radius: 100px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #fc5c00;
-  border-color: #fc5c00;
+  background-color: #94360000;
+  border-color: #ffffff;
 }
 
 a:hover .loal-button, .loal-button:hover, .loal-button:focus {
@@ -128,7 +128,7 @@ a:hover .loal-button, .loal-button:hover, .loal-button:focus {
 
 .card-link {
   text-decoration: none;
-  color: #fc5c00;
+  color: #ffffff;
   font-weight: 600;
   border-bottom: 1px solid #fc5c00;
   position: absolute;

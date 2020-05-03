@@ -18,7 +18,7 @@
                 <h5 class="loal-subsection">External Link</h5>
                 <ul class="list-unstyled">
                     {{ range .Site.Menus.external }}
-                        <li><a href="{{ .URL }}">{{ .Title }}</a></li>
+                        <li class="my-3"><a href="{{ .URL }}">{{ .Title }}</a></li>
                     {{ end }}
                 </ul>
             </div>
@@ -27,10 +27,10 @@
             <div class="col-lg-3 item social mb-3 text-center text-lg-left">
                 <h5 class="loal-subsection">Socials</h5>
                 <ul class="list-unstyled">
-                    {{ with .email }}<li><a href="mailto:{{ . }}">{{.}}</a></li>{{ end }}
-                    {{ with .slack }}<li><a href="{{ . }}">LibreOffice Asia Slack</a></li>{{ end }}
-                    {{ with .facebook }}<li><a href="{{ . }}">Facebook LibreOffice Asia</a></li>{{ end }}
-                    {{ with .twitter }}<li><a href="{{ . }}">Twitter @LibreOfficeAsia</a></li>{{ end }}
+                    {{ with .email }}<li class="my-3"><a href="mailto:{{ . }}">{{.}}</a></li>{{ end }}
+                    {{ with .slack }}<li class="my-3"><a href="{{ . }}">LibreOffice Asia Slack</a></li>{{ end }}
+                    {{ with .facebook }}<li class="my-3"><a href="{{ . }}">Facebook LibreOffice Asia</a></li>{{ end }}
+                    {{ with .twitter }}<li class="my-3"><a href="{{ . }}">Twitter @LibreOfficeAsia</a></li>{{ end }}
                 </ul>
             </div>
             {{ end }}
