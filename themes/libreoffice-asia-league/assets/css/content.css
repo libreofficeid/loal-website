@@ -1,7 +1,7 @@
 .list-contact, .list-activities, 
 .list-members, .list-news,
 .main-contact, .main-activities, 
-.main-members, .main-news, 
+.main-members, .main-news, .main-about,
 .loal-taxonomies, .list-members{
     background: white;
     min-height: 100vh;

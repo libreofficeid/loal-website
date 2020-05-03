@@ -1,3 +1,23 @@
+{{ define "header" }}
+    {{ partial "nav.html" . }}
+    <header class="loal-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center pb-5">
+                    <h1>{{ .Title }}</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+{{ end }}
 {{ define "main" }}
-    {{ .Content }}
+    <section class="main-{{.Section}} py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    {{.Content}}
+                </div>
+            </div>
+        </div>
+    </section>
 {{ end }}
