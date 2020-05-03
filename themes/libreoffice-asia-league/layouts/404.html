@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Page Not Found | LibreOffice Asia League</title>
+    <meta name="description" content="The spirit of collaboration from Asian Community. We meet, work, and do execelent contributions to grow up LibreOffice in Asia.">
+    <link rel="stylesheet" href="{{ "/css/bootstrap.min.css" | absURL }}">
+    <link rel="stylesheet" href="{{ (resources.Get "css/styles.css" | minify).Permalink }}">
+</head>
+
+<body>
+    <div class="container d-flex" style="min-height: 100vh;">
+        <div class="my-auto">
+            <h1 class="text-center">Ups!</h1>
+            <p class="text-center mx-auto w-75" style="font-size: 1.2em;">It looks like the page you requested was not found here: "(</p>
+            <h3 class="text-center w-75"><br></h3><img class="img-fluid" src="{{ "/img/img-404.svg" | absURL }}" alt="img-404">
+            <div class="text-center"><a class="btn btn-primary loal-button mt-3" href="{{ .Site.BaseURL }}">Back to Home</a></div>
+        </div>
+    </div>
+</body>
+
+</html>
