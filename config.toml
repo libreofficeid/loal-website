@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "http://loal.netlify.app/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 enableGitInfo = true
